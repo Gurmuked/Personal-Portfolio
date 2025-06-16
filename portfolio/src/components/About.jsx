@@ -1,25 +1,27 @@
-import { FaFigma, FaFileDownload } from "react-icons/fa";
-import { SiAdobexd, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro } from "react-icons/si";
+import { FaHtml5, FaFileDownload, FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
+import { TbBrandJavascript } from "react-icons/tb";
 
 const skills = [
-  { name: "Figma", icon: <FaFigma size={30} />, percentage: 100 },
-  { name: "Adobe XD", icon: <SiAdobexd size={30} />, percentage: 100 },
-  { name: "Adobe Photoshop", icon: <SiAdobephotoshop size={30} />, percentage: 85 },
-  { name: "Adobe Illustrator", icon: <SiAdobeillustrator size={30} />, percentage: 60 },
-  { name: "Adobe Premiere", icon: <SiAdobepremierepro size={30} />, percentage: 70 },
+  { name: "HTML", icon: <FaHtml5 size={30} />, percentage: 97 },
+  { name: "CSS", icon: <FaCss3Alt size={30} />, percentage: 90 },
+  { name: "JavaScript", icon: <TbBrandJavascript size={30}/>, percentage: 70 },
+  { name: "Node.js", icon: <FaNodeJs size={30} />, percentage: 80 },
+  { name: "React", icon: <FaReact size={30} />, percentage: 75 },
 ];
 
 const About = () => {
   return (
     <section className="bg-neutral-900 text-white py-16 px-6 md:px-20">
       <h2 className="text-3xl font-bold text-center mb-4">About Me</h2>
-      <p className="text-center text-sm text-gray-400 mb-8">User Interface And User Experience And Also Video Editing</p>
+      <p className="text-center text-sm text-gray-400 mb-8">Develop from the scratch to make real world thing 
+        and solve real world problems.
+      </p>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
         <img
           src="../.././src/assets/gurmu.jpg"
           alt="profile"
-          className="w-64 h-auto rounded-lg grayscale"
+          className="w-64 h-auto rounded-lg"
         />
 
         <div className="max-w-xl text-justify">
