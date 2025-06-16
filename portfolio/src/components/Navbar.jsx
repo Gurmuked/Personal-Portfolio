@@ -1,0 +1,39 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const navLinks = [
+  { label: "Home", to: "/", },
+  { label: "Services", to: "/services" },
+  { label: "About me", to: "/about" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact me", to: "/contact" },
+];
+
+const Navbar = () => {
+  return (
+    <nav className="flex items-center justify-between px-8 py-4 bg-neutral-900">
+      <div className="text-orange-600 font-bold text-lg">LOGO</div>
+      <ul className="flex gap-8 flex-1 justify-center">
+        {navLinks.map((item) => (
+          <li key={item.label}>
+            <Link
+              to={item.to}
+              className={`text-sm ${
+                item.active
+                  ? "text-orange-500 font-semibold"
+                  : "text-gray-300 hover:text-orange-400"
+              } transition-colors`}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <button className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded transition-colors">
+        Hire Me
+      </button>
+    </nav>
+  );
+};
+
+export default Navbar;
