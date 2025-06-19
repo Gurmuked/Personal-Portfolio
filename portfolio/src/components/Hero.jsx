@@ -47,7 +47,7 @@ const Hero = () => {
       <div className="flex-1 flex justify-center mt-10 md:mt-0">
         <div className="relative w-80 h-80 rounded-full overflow-hidden bg-neutral-800 flex items-center justify-center">
           <img
-            src="../../src/assets/bb.png"
+            src="../../src/assets/gurmu.jpg"
             alt="Mahmood Fazile"
             className="object-cover w-full h-full"
           />
