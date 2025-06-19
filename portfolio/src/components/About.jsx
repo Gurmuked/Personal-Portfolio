@@ -47,7 +47,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mt-12 justify-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mt-20 justify-items-center">
         {skills.map((skill, index) => (
           <div key={index} className="text-center">
             <div className="relative w-20 h-20 flex items-center justify-center rounded-full border-4 border-orange-500">

@@ -35,7 +35,7 @@ const Portfolio = () => {
   const filtered = projects;
 
   return (
-    <section className="px-8 py-16 bg-neutral-900 min-h-screen">
+    <section className="px-8 py-16 bg-neutral-900 h-[95vh]">
       <div className="text-center mb-8">
         <h2 className="text-3xl text-white font-bold mb-6">Portfolio</h2>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
