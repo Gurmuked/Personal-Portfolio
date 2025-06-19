@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaTiktok  } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -14,6 +14,7 @@ const Hero = () => {
         </h1>
         {/* Social Icons */}
         <div className="flex gap-4 mb-4">
+            <FaLinkedin className="text-gray-400 hover:text-orange-500 text-xl"/>
             <FaFacebook className="text-gray-400 hover:text-orange-500 text-xl"/>
             <FaInstagram className="text-gray-400 hover:text-orange-500 text-xl"/>
             <FaTiktok className="text-gray-400 hover:text-orange-500 text-xl"/>

@@ -1,4 +1,4 @@
-import { FaInstagram, FaLinkedin, FaDribbble, FaBehance, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaTiktok, FaFacebook, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,17 +7,17 @@ const Footer = () => {
 
       <ul className="flex justify-center gap-6 text-sm mb-6 text-gray-300">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
         <li><a href="#">About me</a></li>
+        <li><a href="#">Services</a></li>
         <li><a href="#">Portfolio</a></li>
         <li><a href="#">Contact me</a></li>
       </ul>
 
       <div className="flex justify-center gap-5 mb-6">
-        <a href="#"><FaInstagram className="text-gray-400 hover:text-white" /></a>
         <a href="#"><FaLinkedin className="text-gray-400 hover:text-white" /></a>
-        <a href="#"><FaDribbble className="text-gray-400 hover:text-white" /></a>
-        <a href="#"><FaBehance className="text-gray-400 hover:text-white" /></a>
+        <a href="#"><FaFacebook className="text-gray-400 hover:text-white" /></a>
+        <a href="#"><FaInstagram className="text-gray-400 hover:text-white" /></a>
+        <a href="#"><FaTiktok className="text-gray-400 hover:text-white" /></a>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6 text-gray-300 text-sm">
