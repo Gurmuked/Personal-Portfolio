@@ -5,8 +5,8 @@ const skills = [
   { name: "HTML", icon: <FaHtml5 size={30} />, percentage: 97 },
   { name: "CSS", icon: <FaCss3Alt size={30} />, percentage: 90 },
   { name: "JavaScript", icon: <TbBrandJavascript size={30}/>, percentage: 70 },
-  { name: "Node.js", icon: <FaNodeJs size={30} />, percentage: 80 },
   { name: "React", icon: <FaReact size={30} />, percentage: 75 },
+  { name: "Node.js", icon: <FaNodeJs size={30} />, percentage: 80 },
 ];
 
 const About = () => {
