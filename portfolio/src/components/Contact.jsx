@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <section className="px-8 py-16 bg-neutral-900 min-h-screen">
       <div className="text-center mb-8">
+        <Link to="/contact">
         <h2 className="text-3xl text-white font-bold mb-2">Contact me</h2>
+        </Link>
         <p className="text-gray-400 mb-6">
           Cultivating Connections: Reach Out And Connect With Me
         </p>
@@ -45,10 +48,7 @@ const Contact = () => {
           className="bg-neutral-800 text-gray-200 px-4 py-3 rounded outline-none focus:ring-2 focus:ring-orange-500 col-span-1 md:col-span-1"
         />
         <div className="md:col-span-2 flex justify-end">
-          <button
-            type="submit"
-            className="border border-gray-400 text-gray-200 px-8 py-2 rounded hover:bg-gray-800 transition-colors"
-          >
+          <button className="border border-gray-400 text-gray-200 px-8 py-2 rounded hover:bg-gray-800 transition-colors flex items-center justify-center">
             Send
           </button>
         </div>

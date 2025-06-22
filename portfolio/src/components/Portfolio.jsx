@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 const categories = [
@@ -37,7 +38,9 @@ const Portfolio = () => {
   return (
     <section className="px-8 py-16 bg-neutral-900 h-[95vh]">
       <div className="text-center mb-8">
+        <Link to="/portfolio">
         <h2 className="text-3xl text-white font-bold mb-6">Portfolio</h2>
+        </Link>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           {categories.map((cat) => (
             <button
@@ -56,7 +59,9 @@ const Portfolio = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {filtered.map((project, idx) => (
-          <div key={idx} className="bg-neutral-800 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+          <div
+            className="bg-neutral-800 rounded-2xl overflow-hidden shadow-lg flex flex-col hover:shadow-2xl transition-shadow"
+          >
             <div className="h-64 w-full overflow-hidden">
               <img
                 src={project.image}
@@ -65,7 +70,9 @@ const Portfolio = () => {
               />
             </div>
             <div className="p-4 flex flex-col gap-2">
-              <div className="text-white font-semibold text-lg">{project.name}</div>
+              <div className="text-white font-semibold text-lg">
+                {project.name}
+              </div>
               <div className="text-gray-400 text-sm">{project.category}</div>
             </div>
           </div>

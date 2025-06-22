@@ -1,3 +1,4 @@
+
 import About from "./components/About";
 import Contact from "./components/Contact"
 import Footer from "./components/Footer";
@@ -8,7 +9,7 @@ import Service from "./components/Service";
 
 function App() {
   return (
-    <>
+    <section>
     <Navbar />
     <Hero />
     <About />
@@ -16,8 +17,9 @@ function App() {
     <Portfolio />
     <Contact />
     <Footer />
-    </>
+    </section>
   )
 }
 
-export default App
+export default App;
+

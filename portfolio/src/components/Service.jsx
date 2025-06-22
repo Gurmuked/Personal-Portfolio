@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaAppStore,  FaJava  } from "react-icons/fa";
 
 const services = [
@@ -22,7 +23,9 @@ const Service = () => {
   return (
     <section className="px-8 py-16 bg-neutral-900 h-[60vh]">
       <div className="text-center mb-8">
+        <Link to="/service">
         <h2 className="text-3xl text-white font-bold mb-2">Services</h2>
+        </Link>
         <p className="text-gray-400">
           Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam
         </p>
