@@ -1,13 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 const navLinks = [
-  { label: "Home", to: "/", },
-  { label: "About me", to: "/about" },
-  { label: "Services", to: "/Services" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Contact me", to: "/contact" },
+  { label: "Home", to: "home", },
+  { label: "About me", to: "about" },
+  { label: "Services", to: "service" },
+  { label: "Portfolio", to: "portfolio" },
+  { label: "Contact me", to: "contact" },
 ];
+
+
+const handleScroll = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 
 const Navbar = () => {
   return (
@@ -16,8 +23,8 @@ const Navbar = () => {
       <ul className="flex gap-8 flex-1 justify-center">
         {navLinks.map((item) => (
           <li key={item.label}>
-            <Link
-              to={item.to}
+            <button
+            onClick={() => handleScroll(item.to)}
               className={`text-sm ${
                 item.active
                   ? "text-orange-500 font-semibold"
@@ -25,7 +32,7 @@ const Navbar = () => {
               } transition-colors`}
             >
               {item.label}
-            </Link>
+            </button>
           </li>
         ))}
       </ul>

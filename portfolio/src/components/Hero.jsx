@@ -1,9 +1,9 @@
 import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 
 const Hero = () => {
   return (
-    <Link to="/home" className="flex flex-col md:flex-row items-center justify-between px-8 py-16 bg-neutral-900 min-h-[80vh]">
+    <section id="home" className="flex flex-col md:flex-row items-center justify-between px-8 py-16 bg-neutral-900 min-h-[80vh]">
       {/* Left Content */}
       <div className="flex-1 flex flex-col gap-6">
         <div>
@@ -55,7 +55,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </Link>
+    </section>
   );
 };
 

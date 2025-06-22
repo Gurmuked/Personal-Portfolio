@@ -1,13 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <section className="px-8 py-16 bg-neutral-900 min-h-screen">
+    <section id="contact" className="px-8 py-16 bg-neutral-900 min-h-screen">
       <div className="text-center mb-8">
-        <Link to="/contact">
         <h2 className="text-3xl text-white font-bold mb-2">Contact me</h2>
-        </Link>
         <p className="text-gray-400 mb-6">
           Cultivating Connections: Reach Out And Connect With Me
         </p>

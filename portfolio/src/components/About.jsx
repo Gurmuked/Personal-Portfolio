@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { FaHtml5, FaFileDownload, FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
 
@@ -12,10 +11,8 @@ const skills = [
 
 const About = () => {
   return (
-    <section  className="bg-neutral-900 text-white py-16 px-6 md:px-20">
-      <Link to="/about">
+    <section id="about"  className="bg-neutral-900 text-white py-16 px-6 md:px-20">
       <h2 className="text-3xl font-bold text-center mb-4">About Me</h2>
-      </Link>
       <p className="text-center text-sm text-gray-400 mb-8">Develop from the scratch to make real world thing 
         and solve real world problems.
       </p>
