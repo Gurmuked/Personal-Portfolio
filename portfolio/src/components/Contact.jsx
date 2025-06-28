@@ -44,7 +44,7 @@ const Contact = () => {
           className="bg-neutral-800 text-gray-200 px-4 py-3 rounded outline-none focus:ring-2 focus:ring-orange-500 col-span-1 md:col-span-1"
         />
         <div className="md:col-span-2 flex justify-end">
-          <button className="border border-gray-400 text-gray-200 px-8 py-2 rounded hover:bg-gray-800 transition-colors flex items-center justify-center">
+          <button className="border border-gray-400 text-gray-200 px-8 py-2 rounded hover:bg-orange-600 transition-colors flex items-center justify-center">
             Send
           </button>
         </div>
