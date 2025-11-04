@@ -35,7 +35,7 @@ const Portfolio = () => {
   const filtered = projects;
 
   return (
-    <section id="portfolio" className="px-8 py-16 bg-neutral-900 h-[95vh]">
+    <section id="portfolio" className="px-8 py-16 bg-neutral-900 h-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl text-white font-bold mb-6">Portfolio</h2>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
@@ -54,7 +54,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {filtered.map((project, idx) => (
           <div
             className="bg-neutral-800 rounded-2xl overflow-hidden shadow-lg flex flex-col hover:shadow-2xl transition-shadow"

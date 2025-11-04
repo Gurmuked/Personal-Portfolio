@@ -19,13 +19,13 @@ const handleScroll = (id) => {
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-neutral-900">
-      <div className="text-orange-600 font-bold text-lg">LOGO</div>
+      <div className="text-orange-600 font-bold text-[28px]">LOGO</div>
       <ul className="flex gap-8 flex-1 justify-center">
         {navLinks.map((item) => (
           <li key={item.label}>
             <button
-            onClick={() => handleScroll(item.to)}
-              className={`text-sm ${
+             onClick={() => handleScroll(item.to)}
+              className={`text-[22px] ${
                 item.active
                   ? "text-orange-500 font-semibold"
                   : "text-gray-300 hover:text-orange-400"
@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <button className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded transition-colors">
+      <button className="bg-orange-600 hover:bg-orange-700 text-white text-[22px] px-4 py-1 rounded transition-colors">
         Hire Me
       </button>
     </nav>

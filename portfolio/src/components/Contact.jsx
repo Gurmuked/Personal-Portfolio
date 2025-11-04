@@ -1,14 +1,14 @@
 
 const Contact = () => {
   return (
-    <section id="contact" className="px-8 py-16 bg-neutral-900 min-h-screen">
+    <section id="contact" className="px-8 py-16 bg-neutral-900 h-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl text-white font-bold mb-2">Contact me</h2>
         <p className="text-gray-400 mb-6">
           Cultivating Connections: Reach Out And Connect With Me
         </p>
       </div>
-      <form className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
         <input
           type="text"
           placeholder="Name"
