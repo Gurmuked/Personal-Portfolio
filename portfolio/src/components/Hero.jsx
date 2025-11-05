@@ -31,7 +31,7 @@ const Hero = () => {
       {/* Left Content */}
       <div
         ref={leftRef}
-        className={`flex-1 flex flex-col gap-4 transition-all duration-700 ease-out transform ${
+        className={`flex-1 flex flex-col gap-4 md:pl-12 py-8 transition-all duration-700 ease-out transform ${
           visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
         }`}
       >
@@ -64,7 +64,7 @@ const Hero = () => {
             Hire Me
           </button>
           <button className="border border-gray-600 text-gray-200 px-12 py-2 rounded hover:bg-gray-800">
-            Download CV
+            Contact Me
           </button>
         </div>
       </div>
@@ -72,11 +72,11 @@ const Hero = () => {
       {/* Right Image with non-solid yellow ring + glow */}
 <div
   ref={rightRef}
-  className={`flex-1 flex items-center justify-center mt-8 md:mt-0 transition-all duration-700 ease-out transform ${
+  className={`flex-1 flex items-center justify-center mt-8 py-6 md:mt-0 transition-all duration-700 ease-out transform ${
     visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
   }`}
 >
-  <div className="relative w-72 h-72 flex items-center justify-center rounded-full">
+  <div className="relative w-80 h-80 flex items-center justify-center rounded-full">
     
     {/* Outer green glow */}
     <div
