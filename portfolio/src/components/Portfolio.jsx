@@ -9,17 +9,17 @@ const categories = [
 
 const projects = [
   {
-    image: "../../src/assets/gurmu.jpg",
+    image: "../../src/assets/pr.webp",
     name: "Name Project",
     category: "Categories",
   },
   {
-    image: "../../src/assets/gurmu.jpg",
+    image: "../../src/assets/pr.webp",
     name: "Name Project",
     category: "Categories",
   },
   {
-    image: "../../src/assets/gurmu.jpg",
+    image: "../../src/assets/pr.webp",
     name: "Name Project",
     category: "Categories",
   },
@@ -35,7 +35,7 @@ const Portfolio = () => {
   const filtered = projects;
 
   return (
-    <section id="portfolio" className="px-8 py-16 bg-neutral-900 h-auto">
+  <section id="portfolio" className="scroll-mt-12 px-8 py-16 bg-[#111827]/10 h-[95vh]">
       <div className="text-center mb-8">
         <h2 className="text-3xl text-white font-bold mb-6">Portfolio</h2>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
@@ -45,8 +45,8 @@ const Portfolio = () => {
               onClick={() => setSelected(cat)}
               className={`px-5 py-2 rounded font-medium transition-colors ${
                 selected === cat
-                  ? "bg-orange-600 text-white"
-                  : "bg-neutral-800 text-gray-300 hover:bg-orange-600 hover:text-white"
+                  ? "bg-orange-700 text-white"
+                  : "bg-[#111827] text-gray-300 hover:bg-orange-700 hover:text-gray-300"
               }`}
             >
               {cat}
@@ -54,10 +54,10 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {filtered.map((project, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {filtered.map((project) => (
           <div
-            className="bg-neutral-800 rounded-2xl overflow-hidden shadow-lg flex flex-col hover:shadow-2xl transition-shadow"
+            className="bg-[#111827] rounded-2xl overflow-hidden shadow-lg flex flex-col hover:shadow-2xl transition-shadow"
           >
             <div className="h-64 w-full overflow-hidden">
               <img
