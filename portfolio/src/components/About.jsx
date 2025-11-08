@@ -1,18 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+// framer-motion removed for this section to avoid unused import. Replace with plain elements.
 import { FaDownload } from "react-icons/fa";
 import profileImg from "../assets/about.avif"; // replace with your image path
 
+const SKILLS = [
+  { name: "HTML", percent: 97 },
+  { name: "Tailwind", percent: 80 },
+  { name: "JavaScript", percent: 70 },
+  { name: "React", percent: 75 },
+  { name: "Node.js", percent: 80 },
+  { name: "MongoDB", percent: 90 },
+];
+
 export default function About() {
-  const skills = [
-    { name: "HTML", percent: 97 },
-    { name: "Tailwind", percent: 80 },
-    { name: "JavaScript", percent: 70 },
-    { name: "React", percent: 75 },
-    { name: "Node.js", percent: 80 },
-    { name: "MongoDB", percent: 90 },
-  ];
-  const [fills, setFills] = useState(skills.map(() => 0));
+  const skills = SKILLS;
+  const [fills, setFills] = useState(SKILLS.map(() => 0));
   const [started, setStarted] = useState(false);
   const skillsRef = useRef(null);
 
@@ -78,50 +80,40 @@ export default function About() {
         if (id) cancelAnimationFrame(id);
       });
     };
-  }, [started]);
+  }, [started, skills]);
 
   return (
     <section
       id="about"
-      className="relative flex flex-col items-center justify-center bg-neutral-900 text-white overflow-hidden px-6 md:px-16"
+      className="scroll-mt-14 relative flex flex-col items-center justify-center bg-[#111827]/10 text-[#F3F4F6] overflow-hidden px-6 py-4 md:px-16"
+      /* scroll-mt-16 ensures this section is scrolled into view below the fixed navbar */
     >
-      {/* Subtle ambient orbs (toned down) */}
-      <div className="absolute inset-0 pointer-events-none -z-10">
-        <div className="absolute pt-6 top-4 left-6 w-56 h-56 bg-red-500/12 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-24 right-6 w-56 h-56 bg-green-500/12 rounded-full blur-[120px]"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-80 h-80 bg-yellow-500/12 rounded-full blur-[160px]"></div>
-        </div>
-      </div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-extrabold text-center mb-3 tracking-wide"
-      >
+      
+
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3 tracking-wide">
         About Me
-      </motion.h2>
+      </h2>
 
       <div className="w-full flex justify-center mb-6">
         <div className="relative w-full max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="text-gray-400 text-center mb-4 text-base md:text-lg"
-          >
+          <p className="text-gray-400 text-center mb-4 text-base md:text-lg">
             Develop from scratch to make real-world things and solve real-world problems.
-          </motion.p>
+          </p>
 
           {/* static underline with moving glowing bar */}
           <div className="relative h-1 mt-2 rounded overflow-hidden bg-neutral-700">
             <span
               aria-hidden
-              className="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-transparent via-orange-500/80 to-transparent blur-sm"
-              style={{ animation: 'glow-slide 2.6s linear infinite' }}
+              className="absolute top-0 left-0 h-full w-2/3 blur-lg"
+              style={{
+                background:
+                  'linear-gradient(90deg, rgba(239,68,68,0.18) 0%, rgba(239,68,68,0.98) 12%, rgba(251,191,36,0.98) 50%, rgba(16,185,129,0.98) 88%, rgba(16,185,129,0.18) 100%)',
+                animation: 'glow-slide 2.6s linear infinite',
+                mixBlendMode: 'normal',
+                filter: 'drop-shadow(0 0 10px rgba(251,191,36,0.18))',
+                willChange: 'transform',
+              }}
             />
           </div>
 
@@ -138,12 +130,7 @@ export default function About() {
 
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 z-10 w-full max-w-5xl">
         {/* Profile Image with subtle decorative rings */}
-        <motion.div
-          initial={{ scale: 0.98 }}
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 120 }}
-          className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg flex-shrink-0"
-        >
+        <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg flex-shrink-0">
           {/* Subtle outer glow */}
           <div className="absolute -inset-3 rounded-full" aria-hidden>
             <div className="w-full h-full rounded-full bg-yellow-400/18 blur-2xl"></div>
@@ -169,16 +156,10 @@ export default function About() {
               style={{ objectFit: "contain", objectPosition: "50% 12%" }}
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Description */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex-1 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg"
-        >
+        <div className="flex-1 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem,
             voluptatem unde distinctio ad libero? Rem at cumque quam voluptatem
@@ -213,7 +194,7 @@ export default function About() {
                              a 15.9155 15.9155 0 0 1 0 31.831
                              a 15.9155 15.9155 0 0 1 0 -31.831"
                           fill="none"
-                          stroke="#FBBF24"
+                          stroke="#EA580C"
                           strokeWidth="2.8"
                           strokeLinecap="round"
                             strokeDasharray={`${dash} ${dash}`}
@@ -222,7 +203,7 @@ export default function About() {
                       </svg>
 
                       <div className="absolute flex items-center justify-center">
-                        <div className="w-10 h-10 sm:w-11 sm:h-11 bg-neutral-800 rounded-full flex items-center justify-center text-sm font-semibold text-white/90">
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 bg-[#111827] rounded-full flex items-center justify-center text-sm font-semibold text-white/90">
                           {Math.round(pct)}%
                         </div>
                       </div>
@@ -233,7 +214,7 @@ export default function About() {
               })}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
