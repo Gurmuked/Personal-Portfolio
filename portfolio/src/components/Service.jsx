@@ -20,7 +20,8 @@ const services = [
 
 const Service = () => {
   return (
-  <section id="service" className="scroll-mt-12 px-8 py-16 bg-[#111827]/10 h-[60vh]">
+  <section id="service" className="scroll-mt-12 px-6 py-16 bg-[#111827]/10">
+    <div className="max-w-6xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl text-white font-bold mb-2">Services</h2>
         <p className="text-gray-400">
@@ -29,13 +30,14 @@ const Service = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((service, idx) => (
-          <div key={idx} className="bg-[#111827] rounded-lg p-8 flex flex-col items-center">
+          <div key={idx} className="bg-[#111827] rounded-lg p-8 flex flex-col items-center min-h-[300px] justify-center">
             <div>{service.icon}</div>
-            <h3 className="text-orange-500 font-semibold text-lg mt-4 mb-2">{service.title}</h3>
+            <h3 className="text-white font-bold text-lg mt-4 mb-2">{service.title}</h3>
             <p className="text-gray-400 text-center text-sm">{service.description}</p>
           </div>
         ))}
       </div>
+    </div>
     </section>
   );
 };

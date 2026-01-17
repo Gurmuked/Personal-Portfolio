@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -39,6 +40,7 @@ function App() {
         <Navbar bgMode={bgMode} toggleBg={toggleBg} />
         <Hero />
         <About />
+        <Skills />
         <Service />
         <Portfolio />
         <Contact />

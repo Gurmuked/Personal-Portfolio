@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 // framer-motion removed for this section to avoid unused import. Replace with plain elements.
 import { FaDownload } from "react-icons/fa";
-import profileImg from "../assets/about.avif"; // replace with your image path
+import profileImg from "../assets/about.JPG"; // replace with your image path
 
 const SKILLS = [
   { name: "HTML", percent: 97 },
@@ -92,7 +92,7 @@ export default function About() {
       
 
       <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3 tracking-wide">
-        About Me
+        About <span className="text-orange-500">Me</span>
       </h2>
 
       <div className="w-full flex justify-center mb-6">
@@ -129,90 +129,59 @@ export default function About() {
       {/* (animation removed) */}
 
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 z-10 w-full max-w-5xl">
-        {/* Profile Image with subtle decorative rings */}
-        <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg flex-shrink-0">
+        {/* Profile Image (rectangle) */}
+        <div className="relative w-[300px] max-w-md overflow-hidden rounded-2xl shadow-2xl flex-shrink-0 self-center mx-auto md:mx-0">
           {/* Subtle outer glow */}
-          <div className="absolute -inset-3 rounded-full" aria-hidden>
-            <div className="w-full h-full rounded-full bg-yellow-400/18 blur-2xl"></div>
+          <div className="absolute -inset-3 rounded-2xl" aria-hidden>
+            <div className="w-full h-full rounded-2xl bg-yellow-400/12 blur-2xl" />
           </div>
 
-          {/* Thin decorative ring (non-solid, gentle) */}
+          {/* Decorative overlay */}
           <div
             aria-hidden
-            className="absolute -inset-1 rounded-full pointer-events-none"
+            className="absolute -inset-1 rounded-2xl pointer-events-none"
             style={{
               background:
-                "conic-gradient(from 200deg at 50% 50%, rgba(255,170,0,0.28) 0deg, rgba(255,170,0,0.08) 80deg, transparent 140deg, rgba(255,170,0,0.18) 220deg, rgba(255,170,0,0.06) 300deg)",
+                "linear-gradient(120deg, rgba(255,255,255,0.02), rgba(255,255,255,0))",
               mixBlendMode: "screen",
             }}
           />
 
-          {/* Image: use object-contain and pull image up so top (hair) is visible */}
-          <div className="relative w-full h-full rounded-full overflow-hidden flex items-start justify-center p-2 bg-neutral-800">
+          {/* Image: rectangular */}
+          <div className="relative w-[300px] h-[380px] overflow-hidden bg-neutral-800 rounded-2xl">
             <img
               src={profileImg}
               alt="Profile"
-              className="w-full h-full rounded-full"
-              style={{ objectFit: "contain", objectPosition: "50% 12%" }}
+              className="w-[300px] h-full object-cover items-center"
             />
           </div>
         </div>
 
         {/* Description */}
-        <div className="flex-1 space-y-6 text-gray-300 leading-relaxed text-base md:text-lg">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem,
-            voluptatem unde distinctio ad libero? Rem at cumque quam voluptatem
-            excepturi libero harum amet saepe, maxime ullam voluptatem nemo in!
-            A software engineer crafts well-considered solutions that bring ideas
-            to life across web and mobile platforms.
-          </p>
+        <div className="flex-1 flex flex-col space-y-6 text-gray-300 leading-relaxed text-base md:text-lg">
+          <div>
+            <p>
+              I'm a passionate web and mobile app developer with a keen eye for creating scalable,
+              user-friendly applications. With years of experience in building real-world projects,
+              I specialize in transforming ideas into elegant digital solutions.
+            </p>
 
-          {/* Skill circles (SVG rings, smaller, animated fill in yellow) */}
-          <div ref={skillsRef} className="w-full flex justify-center mt-2">
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 items-center">
-              {skills.map((s, i) => {
-                const pct = fills[i] ?? 0;
-                // SVG circle uses a 100-unit circumference for easy percent math
-                const dash = 100;
-                const offset = Math.max(0, dash - (dash * pct) / 100);
+            <p className="mt-4">
+              My expertise spans across frontend and backend development, mobile app creation, and
+              UI/UX design. I thrive on solving complex problems and delivering high-quality code
+              that makes a difference.
+            </p>
+          </div>
 
-                return (
-                  <div key={s.name} className="flex flex-col items-center py-6 px-4">
-                    <div className="relative w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center">
-                      <svg viewBox="0 0 36 36" className="w-full h-full">
-                        <path
-                          d="M18 2.0845
-                             a 15.9155 15.9155 0 0 1 0 31.831
-                             a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="rgba(255,255,255,0.06)"
-                          strokeWidth="2.8"
-                        />
-                        <path
-                          d="M18 2.0845
-                             a 15.9155 15.9155 0 0 1 0 31.831
-                             a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#EA580C"
-                          strokeWidth="2.8"
-                          strokeLinecap="round"
-                            strokeDasharray={`${dash} ${dash}`}
-                            strokeDashoffset={offset}
-                        />
-                      </svg>
-
-                      <div className="absolute flex items-center justify-center">
-                        <div className="w-10 h-10 sm:w-11 sm:h-11 bg-[#111827] rounded-full flex items-center justify-center text-sm font-semibold text-white/90">
-                          {Math.round(pct)}%
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-2 text-xs text-gray-300 text-center">{s.name}</div>
-                  </div>
-                );
-              })}
-            </div>
+          <div>
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium bg-gradient-to-r from-violet-600 to-pink-600 text-white shadow-md"
+            >
+              <FaDownload />
+              <span>Download CV</span>
+            </a>
           </div>
         </div>
       </div>
